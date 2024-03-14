@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="asset/css/main_style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+    <script src="asset/js/genBillList.js"></script>
+
+    <title>Bill List</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <table id="BillList-top">
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Pay Date</th>
+                    <th style="width: 40%;">Pay by ID</th>
+                    <th>Pay Amount</th>
+                </tr>
+            </thead>
+        </table>
+        <table id="BillList">
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+
+</html>

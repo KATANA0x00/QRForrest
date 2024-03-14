@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="asset/css/main_style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+
+    <title>Home</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container" style="margin-top: 10%;">
+        <a href="payment.html">
+            <button id="a-button">
+                <img src="asset\img\bill.png" width="40%"><br>
+                <label>Payment</label>
+            </button>
+        </a>
+        <a href="genTicket.html">
+            <button id="a-button">
+                <img src="asset\img\qr.png" width="40%"><br>
+                <label>Create Ticket</label>
+            </button>
+        </a>
+        <a href="admin.html">
+            <button id="a-button">
+                <img src="asset\img\admin.png" width="40%"><br>
+                <label>System Admin</label>
+            </button>
+        </a>
+    </div>
+</body>
+
+</html>

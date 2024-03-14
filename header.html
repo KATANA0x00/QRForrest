@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="asset\css\header.css">
+<header>
+    <a href="index.html"><img src="asset/img/logo.png" alt="logo" style="width: 120px;margin-right:20px;"></a>
+    <a class="navlink" href="index.html" style="font-weight: bolder;">HOME.</a>
+    <a class="navlink" href="payment.html">Payment.</a>
+    <a class="navlink" href="genTicket.html">Create Ticket.</a>
+    <a class="navlink" href="admin.html">System Admin.</a>
+    <nav>
+        <img class="theme-icon"></img>
+        <label class="switch">
+            <input type="checkbox" id="theme-check">
+            <span class="slider round"></span>
+        </label>
+    </nav>
+</header>
+
+<script>
+    const theme = document.getElementById('theme-check');
+    const Check = localStorage.getItem('Theme');
+    if (Check && Check === 'true') {
+        theme.checked = true;
+    }
+
+    theme.addEventListener('click', () => {
+        localStorage.setItem('Theme', theme.checked);
+    });
+</script>

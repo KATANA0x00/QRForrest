@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="asset/css/main_style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+
+    <title>Payment</title>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <div class="billing">
+            <label>Amount</label>
+            <input type="number" id="amount-box">
+            <label style="margin-right: 70px;">Baht</label>
+
+            <div class="qr-box-top">
+                <label>QR-code ID</label>
+                <label></label>
+                <label>Credit left</label>
+                <button id="add-qr" onclick="replaceWithInput()">Add</button>
+            </div>
+            <div id="qr-box"></div>
+            <div class="total-box">
+                <label></label>
+                <label>Need More</label>
+                <label id="label-need" style="color: var(--third)">0</label>
+                <label>THB</label>
+                <label>Total</label>
+                <label id="label-total" style="color: var(--third)">0</label>
+                <label>THB</label>
+            </div>
+            <button id="finish-button">finish</button>
+        </div>
+    </div>
+</body>
+
+<script src="asset/js/payment.js"></script>
+
+</html>

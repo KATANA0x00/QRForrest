@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const escpos = require('escpos');
+        const usb = require('usb');
+
+        // Connect to the POS printer
+        const device = new escpos.USB();
+
+        // Set QR code size and error correction level (adjust as needed)
+        const qrSize = 6;
+        const qrErrCorrection = 'H';
+
+        // Generate the QR code image URL or file path
+        const qrCodeImage = 'https://example.com/qr-code.png'; // Replace with the actual QR code image URL or file path
+
+        // Find the USB printer device
+        const printerDevice = usb.findByIds(0x0456, 0x0808); // Replace with your printer's vendor and product IDs
+
+        if (printerDevice) {
+            const printerInterface = printerDevice.interfaces[0];
+            const printerEndpoint = printerInterface.endpoints[0];
+
+            // Open the USB connection to the printer
+            printerInterface.claim();
+            printerEndpoint.transferType = usb.LIBUSB_TRANSFER_TYPE_BULK;
+            printerEndpoint.transfer(escpos.ESC / POS.createImageBuffer(qrCodeImage, qrSize, qrErrCorrection));
+
+            // Close the USB connection to the printer
+            printerInterface.release();
+        }
+    </script>
+</body>
+
+</html>
